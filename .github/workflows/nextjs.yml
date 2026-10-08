@@ -27,15 +27,17 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
+        working-directory: ./aloalamin
         run: bun install
 
       - name: Build with Next.js
+        working-directory: ./aloalamin
         run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./aloalamin/out
 
   deploy:
     environment:
